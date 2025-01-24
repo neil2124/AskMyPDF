@@ -1,6 +1,7 @@
 import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
 import fs from "fs";
 import path from "path";
+import os from "os";
 import { Readable } from "stream";
 
 export async function downloadFromS3(file_key: string): Promise<string> {
@@ -23,29 +24,32 @@ export async function downloadFromS3(file_key: string): Promise<string> {
     const command = new GetObjectCommand(params);
     const obj = await s3Client.send(command);
 
-    const tmpDir = path.join("C:", "tmp");
-    const file_name = path.join(tmpDir, `elliott${Date.now().toString()}.pdf`);
+    // ✅ Use cross-platform temp directory
+    const tmpDir = path.join(os.tmpdir(), "myapp");
+    const file_name = path.join(tmpDir, `elliott_${Date.now()}.pdf`);
 
-    // Ensure the directory exists
+    // ✅ Ensure the temp directory exists
     if (!fs.existsSync(tmpDir)) {
       fs.mkdirSync(tmpDir, { recursive: true });
     }
 
+    // ✅ Handle AWS SDK ReadableStream properly
     if (obj.Body instanceof Readable) {
       const writeStream = fs.createWriteStream(file_name);
       obj.Body.pipe(writeStream);
+
       await new Promise((resolve, reject) => {
         writeStream.on("finish", resolve);
         writeStream.on("error", reject);
       });
+
+      console.log(`File downloaded successfully to: ${file_name}`);
       return file_name;
     } else {
-      throw new Error("Response body is not a Node.js Readable stream");
+      throw new Error("Response body is not a readable stream.");
     }
   } catch (error) {
     console.error("Error downloading from S3:", error);
     throw error;
   }
 }
-
-// downloadFromS3("uploads/1693568801787chongzhisheng_resume.pdf");
