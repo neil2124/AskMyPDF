@@ -6,13 +6,15 @@ This project features **seamless PDF integration**, real-time AI-driven response
 
 ---
 
-## 🔗 Live Demo
-[Click here to view the live project](#) *(Replace with actual link)*
+## 🚀 Live Demo  
+
+🔗 **[https://ask-my-pdf.neilmascarenhas.com/](#)**
+
 
 ## 🚀 Key Features  
 
 - ✅ **Upload & Chat with PDFs** – Upload PDFs and ask AI-powered questions about their content.  
-- ✅ **AI-powered Q&A** – Receive intelligent answers based on PDF content using **OpenAI API**.  
+- ✅ **AI-powered Q&A** – Receive intelligent answers based on PDF content using **Gemini API**.  
 - ✅ **Real-time Chat Experience** – Engage in a conversational flow with documents.  
 - ✅ **Subscription & Monetization** – Premium users unlock additional features via **Stripe payments**.  
 - ✅ **Secure Authentication** – Integrated **Clerk authentication** for a safe user experience.  
@@ -37,7 +39,7 @@ This project features **seamless PDF integration**, real-time AI-driven response
 - **Drizzle-kit** – Schema management and migrations for Drizzle ORM.  
 
 ### **AI & APIs:**  
-- **OpenAI API** – AI-powered responses based on chat context.  
+- **Gemini API** – AI-powered responses based on chat context.  
 - **OpenAI Edge** – Optimized for AI inference on the edge.  
 - **Pinecone** – Vector database for fast and scalable search queries.  
 
@@ -63,9 +65,7 @@ This project features **seamless PDF integration**, real-time AI-driven response
 
 ---
 
-## 🚀 Live Demo  
-
-🔗 **[Live Link](#)** (Add the deployed project link here)  
+ 
 
 ---
 
@@ -80,14 +80,13 @@ This project features **seamless PDF integration**, real-time AI-driven response
 3️⃣ Required API Keys & Configuration
 You will need API keys and credentials from the following services:
 
-MongoDB – Database connection URL.
 PostgreSQL (Drizzle ORM) – Connection URL for database operations.
-Cloudinary – API keys for image and file storage.
 Stripe – Secret keys for handling payments and webhooks.
 Clerk – Authentication keys for user management.
-OpenAI API – Key for AI-powered PDF interaction.
+Gemini API – Key for AI-powered PDF interaction.
 Pinecone – API keys for vector search and semantic queries.
 AWS SDK – For cloud-based services.
+Neon Database Serverless – For cloud-based database.
 
 ### **1️⃣ Clone the Repository**  
 ```bash
