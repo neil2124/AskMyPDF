@@ -1,6 +1,6 @@
 # 📄 AskMyPDF – AI-powered PDF Chat Assistant  
 
-**AskMyPDF** is a next-generation **AI-powered document assistant** that enables users to upload PDFs, interact with them through **natural language queries**, and receive AI-generated responses. Designed for professionals, researchers, and students, it transforms static documents into **interactive conversations** powered by **OpenAI's API**.  
+**AskMyPDF** is a next-generation **AI-powered document assistant** that enables users to upload PDFs, interact with them through **natural language queries**, and receive AI-generated responses. Designed for professionals, researchers, and students, it transforms static documents into **interactive conversations** powered by **Gemini's API**.  
 
 This project features **seamless PDF integration**, real-time AI-driven responses, **secure authentication**, and a **subscription model** for premium users. The **payment system** is powered by **Stripe**, and all transactions are handled securely using **webhooks**.  
 
