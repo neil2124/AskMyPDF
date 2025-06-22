@@ -8,6 +8,7 @@ import { auth } from "@clerk/nextjs/server";
 import { eq } from "drizzle-orm";
 import { redirect } from "next/navigation";
 import React from "react";
+// import { listGeminiModels } from "@/lib/embeddings";
 
 type Props = {
   params: Promise<{ chatId: string }>; // 🔹 Ensure `params` is awaited
@@ -25,7 +26,12 @@ async function fetchChatData(chatId: string) {
   if (!chat) return redirect("/");
 
   const isPro = await checkSubscription();
+  //Models available
+  // const models = await listGeminiModels();
+  // console.log(models);
   return { _chats, currentChat: chat, isPro };
+
+
 }
 
 export default async function ChatPage({ params }: Props) {

@@ -56,7 +56,7 @@ export async function POST(req: Request) {
     `;
 
     // ✅ Use Gemini API with system instructions
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     const result = await model.generateContent({
       contents: [
         { role: "user", parts: [{ text: "You are an AI assistant who strictly follows the provided context." }] },
